@@ -312,6 +312,13 @@ class _ConnectionPageState extends State<ConnectionPage>
             Row(
               children: [
                 Flexible(child: _buildRemoteIDTextField(context)),
+                const SizedBox(width: 15), // 这里加个间距
+                Image.asset(
+                  'assets/logo1.png', 
+                  width: 40, 
+                  height: 40,
+                  fit: BoxFit.contain,
+                ),
               ],
             ).marginOnly(top: 22),
             SizedBox(height: 12),
