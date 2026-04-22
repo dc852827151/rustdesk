@@ -44,15 +44,15 @@ EdgeInsets? _menuPadding() {
 class _PeerTabPageState extends State<PeerTabPage>
     with SingleTickerProviderStateMixin {
   final List<_TabEntry> entries = [
-    _TabEntry(RecentPeersView(
-      menuPadding: _menuPadding(),
-    )),
+    // _TabEntry(RecentPeersView(
+    //   menuPadding: _menuPadding(),
+    // )),
     _TabEntry(FavoritePeersView(
       menuPadding: _menuPadding(),
     )),
-    _TabEntry(DiscoveredPeersView(
-      menuPadding: _menuPadding(),
-    )),
+    // _TabEntry(DiscoveredPeersView(
+    //   menuPadding: _menuPadding(),
+    // )),
     _TabEntry(
         AddressBook(
           menuPadding: _menuPadding(),
