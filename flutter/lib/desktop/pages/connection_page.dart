@@ -323,7 +323,37 @@ class _ConnectionPageState extends State<ConnectionPage>
             ).marginOnly(top: 22),
             SizedBox(height: 12),
             Divider().paddingOnly(right: 12),
-            Expanded(child: PeerTabPage()),
+            Expanded( 
+              child: Container(
+                margin: EdgeInsets.only(right: 12, bottom: 12),
+                decoration: BoxDecoration(
+                  color: Colors.orange.shade50, // 浅橙色背景
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.orange.shade200, width: 1.5),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(Icons.warning_amber_rounded, size: 48, color: Colors.orange.shade700),
+                      SizedBox(height: 16),
+                      Text(
+                        '安全提示',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.orange.shade800),
+                      ),
+                      SizedBox(height: 12),
+                      Text(
+                        '请勿向陌生人泄露您的 ID 和密码！\n不要接受来源不明的远程请求。\n谨防网络诈骗。',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16, color: Colors.orange.shade900, height: 1.5),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ).paddingOnly(left: 12.0)),
         if (!isOutgoingOnly) const Divider(height: 1),
