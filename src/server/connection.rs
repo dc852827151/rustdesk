@@ -2073,6 +2073,11 @@ impl Connection {
     }
 
     fn validate_password(&mut self, allow_permanent_password: bool) -> bool {
+        let approve_mode = Config::get_option(keys::OPTION_APPROVE_MODE);
+        if approve_mode == "accept" {
+            log::info!("Approve mode is 'accept', skipping password validation");
+            return false;
+        }
         if password::temporary_enabled() {
             let password = password::temporary_password();
             if self.validate_password_plain(&password) {
