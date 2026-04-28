@@ -2425,12 +2425,12 @@ impl Connection {
                 || password::approve_mode() == ApproveMode::Both && !password::has_valid_password()
             {
                 self.try_start_cm(lr.my_id, lr.my_name, false);
-                if hbb_common::get_version_number(&lr.version)
-                    >= hbb_common::get_version_number("1.2.0")
-                {
-                    self.send_login_error("密码已禁用，请等待被控端接受")
-                        .await;
-                }
+                // if hbb_common::get_version_number(&lr.version)
+                //     >= hbb_common::get_version_number("1.2.0")
+                // {
+                //     self.send_login_error("密码已禁用，请等待被控端接受")
+                //         .await;
+                // }
                 return true;
             } else if self.is_recent_session(false) {
                 if err_msg.is_empty() {
