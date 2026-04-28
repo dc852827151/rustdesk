@@ -141,7 +141,7 @@ class _RemotePageState extends State<RemotePage>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
       _ffi.dialogManager
-          .showLoading(translate('Connecting...'), onCancel: closeConnection);
+          .showLoading("密码功能已被禁用，请等待对方接受...", onCancel: closeConnection);
     });
     WakelockManager.enable(_uniqueKey);
 
