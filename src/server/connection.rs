@@ -2428,7 +2428,7 @@ impl Connection {
                 if hbb_common::get_version_number(&lr.version)
                     >= hbb_common::get_version_number("1.2.0")
                 {
-                    self.send_login_error(crate::client::LOGIN_MSG_NO_PASSWORD_ACCESS)
+                    self.send_login_error("密码已禁用，请等待被控端接受")
                         .await;
                 }
                 return true;
